@@ -1,0 +1,54 @@
+﻿<Page x:Class="Manager.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Manager"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EntrancePage"
+      Background="White">
+
+    <Grid FlowDirection="RightToLeft">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.3*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <TextBlock x:Name="txtTimeMessage" Text="ברוכים הבאים" FontSize="35" FontWeight="Bold" Margin="0,-20,0,0"/>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Image x:Name="ProfilImg" Source="\Images\LoginProfil.png" MaxHeight="150" MaxWidth="150" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
+            
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Account" Width="30"  Height="25" Margin="0,10,10,0"/>
+                <TextBox x:Name="txtLoginName" FontSize="15" Margin="0,5" Width="150" HorizontalAlignment="Left"  KeyUp="LoginName_KeyUp"
+                       materialDesign:HintAssist.Hint="שם פרופיל"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,20, 0,0">
+                <materialDesign:PackIcon Kind="KeyVariant" Width="30"  Height="20" Margin="0,10,10,0"/>
+                <PasswordBox x:Name="pswLogin" FontSize="15" Margin="0,5" Width="150" HorizontalAlignment="Left" KeyDown="pswLogin_KeyDown"
+                         materialDesign:HintAssist.Hint="סיסמה"
+                         materialDesign:TextFieldAssist.HasClearButton="True"/>
+            </StackPanel>
+
+            <TextBlock  Grid.Row="1" Grid.Column="1" x:Name="txtMessage" Foreground="Red" FontSize="15" Margin="0,10,0,0"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

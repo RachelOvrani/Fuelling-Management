@@ -1,0 +1,484 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                    xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" 
+                    mc:Ignorable="d">
+    <!-- Resource dictionary entries should be defined here. -->
+    <SolidColorBrush x:Key="Main_background" Color="#FFECECEC"/>
+    <SolidColorBrush x:Key="Top_Background" Color="#FF345A6E"/>
+    <SolidColorBrush x:Key="Tab_MO" Color="#FFd2bed5"/>
+    <SolidColorBrush x:Key="Tab_regular" Color="#FFDED3E0"/>
+    <LinearGradientBrush x:Key="top_button_MO" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#274352" Offset="0"/>
+        <GradientStop Color="#32576b" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="InnerTabBg" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#f1f1f1" Offset="0"/>
+        <GradientStop Color="#ffffff" Offset="0.3"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="top_button_Pressed" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#1c2f3a" Offset="0"/>
+        <GradientStop Color="#32576b" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="button_reg" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#ffffff" Offset="0"/>
+        <GradientStop Color="#eeeeee" Offset="0.8"/>
+        <GradientStop Color="#eeeeee" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="button_mo" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#f8f8f8" Offset="0.508"/>
+        <GradientStop Color="#c3dff0" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="button_pressed" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#c3dff0" Offset="0"/>
+        <GradientStop Color="#f8f8f8" Offset="0.452"/>
+    </LinearGradientBrush>
+
+    <Style x:Key="ButtonFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Top_Side_Buttons" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Height="28" Background="#00000000" MinWidth="90">
+                        <StackPanel Orientation="Horizontal" d:LayoutOverrides="Height">
+                            <Image Source="{Binding Tag, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" Margin="7,0" SnapsToDevicePixels="True" Stretch="None"/>
+                            <ContentPresenter TextElement.FontFamily="Arial" TextElement.Foreground="#ffc5babf" TextElement.FontSize="12" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True" >
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource top_button_MO}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True" >
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource top_button_Pressed}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="ToggleButton.IsChecked" Value="true"/>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="0.4"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MainTabControlStyle" TargetType="{x:Type TabControl}">
+        <Setter Property="ItemContainerStyle" Value="{DynamicResource TabItemStyle1}"/>
+        <Setter Property="Padding" Value="4,4,4,4"/>
+        <Setter Property="Background" Value="#FFFFFF"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabControl}">
+                    <Grid ClipToBounds="true" SnapsToDevicePixels="true" KeyboardNavigation.TabNavigation="Local">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition x:Name="ColumnDefinition0"/>
+                            <ColumnDefinition x:Name="ColumnDefinition1" Width="0"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="RowDefinition0" Height="Auto"/>
+                            <RowDefinition x:Name="RowDefinition1" Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TabPanel x:Name="HeaderPanel" Grid.Column="0" IsItemsHost="true" Margin="10,2,2,0" Grid.Row="0" KeyboardNavigation.TabIndex="1" Panel.ZIndex="1"/>
+                        <Border x:Name="ContentPanel" Background="{TemplateBinding Background}" Grid.Column="0" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="1" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
+                            <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="MainTabControlStyle2" TargetType="{x:Type TabControl}">
+        <Setter Property="ItemContainerStyle" Value="{DynamicResource TabItemStyle2}"/>
+        <Setter Property="Padding" Value="4,4,4,4"/>
+        <Setter Property="Background" Value="#FFFFFF"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabControl}">
+                    <Grid ClipToBounds="true" SnapsToDevicePixels="true" KeyboardNavigation.TabNavigation="Local">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition x:Name="ColumnDefinition0"/>
+                            <ColumnDefinition x:Name="ColumnDefinition1" Width="0"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="RowDefinition0" Height="Auto"/>
+                            <RowDefinition x:Name="RowDefinition1" Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TabPanel x:Name="HeaderPanel" Grid.Column="0" IsItemsHost="true" Margin="5,2,2,0" Grid.Row="0" KeyboardNavigation.TabIndex="1" Panel.ZIndex="1"/>
+                        <Border x:Name="ContentPanel" Background="{TemplateBinding Background}" Grid.Column="0" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="1" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
+                            <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TabItemFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="3,3,3,1" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TabItemStyle1" TargetType="{x:Type TabItem}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource TabItemFocusVisual}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <!--<Setter Property="Cursor" Value="Hand"/>-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Grid SnapsToDevicePixels="true">
+                        <Border x:Name="Bd" Background="{StaticResource Tab_regular}" 
+                                Cursor="Hand"
+                                Height="35" MinWidth="145" Margin="0,0,10,0">
+                            <Border x:Name="InnerBd" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2">
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0" 
+                                                  TextElement.FontFamily="Arial" TextElement.FontSize="15" 
+                                                  TextElement.Foreground="#ff707070"
+                                                  x:Name="Content" Text="{Binding Path=Header, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}"
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                <!--<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0" 
+                                                  TextElement.FontFamily="Arial" TextElement.FontSize="15" 
+                                                  TextElement.Foreground="#ff707070"
+                                                  x:Name="Content" ContentSource="Header" 
+                                                  RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />-->
+                            </Border>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Tab_MO}"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter Property="Panel.ZIndex" Value="1"/>
+                            <Setter Property="Background" TargetName="Bd" Value="White"/>
+                            <Setter Property="Background" TargetName="InnerBd" Value="{StaticResource InnerTabBg}"/>
+                            <Setter Property="TextElement.FontWeight" Value="Bold" TargetName="Content"/>
+                            <Setter Property="TextElement.Foreground" Value="#143d53" TargetName="Content"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="false"/>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Tab_MO}"/>
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Top"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-2,-2,-2,-1"/>
+                            <Setter Property="Margin" TargetName="Content" Value="0,0,0,1"/>
+                        </MultiTrigger>
+
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="Bd"  Value="#dddddd"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TabItemStyle2" TargetType="{x:Type TabItem}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource TabItemFocusVisual}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <!--<Setter Property="Cursor" Value="Hand"/>-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Grid SnapsToDevicePixels="true">
+                        <Border x:Name="Bd" Background="{StaticResource Tab_regular}" 
+                                Cursor="Hand"
+                                Height="25" MinWidth="145" Margin="0,0,10,0">
+                            <Border x:Name="InnerBd" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2">
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0" 
+                                                  TextElement.FontFamily="Arial" TextElement.FontSize="15" 
+                                                  TextElement.Foreground="#ff707070"
+                                                  x:Name="Content" Text="{Binding Path=Header, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}"
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                <!--<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0" 
+                                                  TextElement.FontFamily="Arial" TextElement.FontSize="15" 
+                                                  TextElement.Foreground="#ff707070"
+                                                  x:Name="Content" ContentSource="Header" 
+                                                  RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />-->
+                            </Border>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Tab_MO}"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter Property="Panel.ZIndex" Value="1"/>
+                            <Setter Property="Background" TargetName="Bd" Value="White"/>
+                            <Setter Property="Background" TargetName="InnerBd" Value="{StaticResource InnerTabBg}"/>
+                            <Setter Property="TextElement.FontWeight" Value="Bold" TargetName="Content"/>
+                            <Setter Property="TextElement.Foreground" Value="#143d53" TargetName="Content"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="false"/>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Tab_MO}"/>
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Top"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-2,-2,-2,-1"/>
+                            <Setter Property="Margin" TargetName="Content" Value="0,0,0,1"/>
+                        </MultiTrigger>
+
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="Bd"  Value="#dddddd"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--<Style x:Key="TabItemStyle1" TargetType="{x:Type TabItem}" BasedOn="{StaticResource TabItemStyle}">
+        <Setter Property="Height" Value="35"/>
+    </Style>
+    <Style x:Key="TabItemStyle2" TargetType="{x:Type TabItem}" BasedOn="{StaticResource TabItemStyle}">
+        <Setter Property="Height" Value="25"/>
+    </Style>-->
+    <LinearGradientBrush x:Key="ButtonNormalBackground" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#F3F3F3" Offset="0"/>
+        <GradientStop Color="#EBEBEB" Offset="0.5"/>
+        <GradientStop Color="#DDDDDD" Offset="0.5"/>
+        <GradientStop Color="#CDCDCD" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070"/>
+    <Style x:Key="small_action_buttons" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Height="18" Background="#00000000" MinWidth="18" CornerRadius="3">
+                        <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="{Binding Tag, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"  SnapsToDevicePixels="True" Stretch="None"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True" >
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Tab_regular}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True" >
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Tab_MO}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="ToggleButton.IsChecked" Value="true"/>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="0.4"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="main_button" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Height="25" Background="{DynamicResource button_reg}" MinWidth="25" CornerRadius="3" BorderThickness="1" BorderBrush="#ffbbbbbb" >
+                        <Image x:Name="icon" HorizontalAlignment="Center" VerticalAlignment="Center" Source="{Binding Tag, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"  SnapsToDevicePixels="True" Stretch="None"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True" >
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource button_mo}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True" >
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource button_pressed}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="ToggleButton.IsChecked" Value="true"/>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="border" Value="#e4e4e4"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <SolidColorBrush x:Key="CheckBoxStroke" Color="#8E8F8F"/>
+    <Style x:Key="CheckRadioFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="14,0,0,0" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="RadioButtonStyle1" TargetType="{x:Type RadioButton}">
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Grid x:Name="grid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="18"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <ContentPresenter x:Name="content" TextElement.Foreground="#707070" TextElement.FontSize="15" TextElement.FontFamily="Arial" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="5,0,0,0" RecognizesAccessKey="True" Grid.Column="1" VerticalAlignment="Center"/>
+                        <Ellipse Stroke="#FFb6b6b6" Width="18" Height="18">
+                            <Ellipse.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFCECECE" Offset="0"/>
+                                    <GradientStop Color="#FFEFEFEF" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <Ellipse x:Name="ellipse" Grid.ColumnSpan="1" Width="9" Height="9" Visibility="Hidden">
+                            <Ellipse.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF2F89B9" Offset="0"/>
+                                    <GradientStop Color="#FF437793" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Visibility" TargetName="ellipse" Value="Visible"/>
+                            <Setter Property="TextElement.FontWeight" TargetName="content" Value="Bold"/>
+                        </Trigger>
+                        <Trigger Property="HasContent" Value="true">
+                            <Setter Property="FocusVisualStyle" Value="{StaticResource CheckRadioFocusVisual}"/>
+                            <Setter Property="Padding" Value="4,0,0,0"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" TargetName="grid"  Value="0.3"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <Style x:Key="editMonth_action_button" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Height="25" Background="#00000000" MinWidth="25" CornerRadius="3">
+                        <Image HorizontalAlignment="Center" VerticalAlignment="Center" 
+                               Source="{Binding Tag, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"  
+                               Height="19" Width="19"
+                               FlowDirection="LeftToRight"
+                               SnapsToDevicePixels="True" Stretch="Uniform"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True" >
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Tab_regular}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True" >
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Tab_MO}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="ToggleButton.IsChecked" Value="true"/>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="0.4"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="editReport_action_button" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Height="25"  Background="#00000000" Width="25" CornerRadius="3">
+                        <Image HorizontalAlignment="Center" VerticalAlignment="Center" 
+                               Source="{Binding Tag, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"  
+                               Height="20" Width="16"
+                               FlowDirection="LeftToRight"
+                               SnapsToDevicePixels="True" Stretch="Uniform"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True" >
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Tab_regular}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True" >
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Tab_MO}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="ToggleButton.IsChecked" Value="true"/>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="0.4"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+
+
+
+
+
+</ResourceDictionary>

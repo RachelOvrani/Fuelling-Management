@@ -1,0 +1,73 @@
+﻿<Page x:Class="Manager.TransactionsList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Manager" xmlns:controls="clr-namespace:Manager.Controls"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TransactionsTable"
+      Background="White">
+    <Grid FlowDirection="RightToLeft">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBlock Text="חיפוש :" Margin="10,20" FontSize="15" VerticalAlignment="Center"/>
+
+
+
+                <DatePicker Name="dpSearchByDateFilter" SelectedDateChanged="dpSearchByDateFilter_SelectedDateChanged"/>
+
+                <Button x:Name="btnClearFilter"
+                        Visibility="Collapsed"
+                        Style="{StaticResource ClearFilterButtonStyle}"
+                        Click="btnClearFilter_Click"/>
+            </StackPanel>
+
+
+            <Button Grid.Row="0" x:Name="btnRefresh"
+                        Visibility="Visible"
+                        HorizontalAlignment="Right"
+                        Style="{StaticResource RefreshButtonStyle}"
+                        Click="btnRefresh_Click"/>
+
+
+            <ListView x:Name="dgTransactions" 
+                      Grid.Row="1" FontSize="16" 
+                      ScrollViewer.VerticalScrollBarVisibility="Auto" >
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Margin" Value="15,0,0,0" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="קוד עסקה" Width="150" DisplayMemberBinding="{Binding TransactionID}"/>
+                        <GridViewColumn Header="תאריך" Width="200" DisplayMemberBinding="{Binding TransactionDate, StringFormat='dd/MM/yyyy HH:mm'}"/>
+                        <GridViewColumn Header="קוד רישוי רכב" Width="160"  DisplayMemberBinding="{Binding Car.PlateNumber}"/>
+                        <GridViewColumn Header="חוק" Width="120" DisplayMemberBinding="{Binding Car.Rule.RuleName}"/>
+                        <GridViewColumn Header="תחנה" Width="120" DisplayMemberBinding="{Binding Station.StationName}"/>
+                        <GridViewColumn Header="מוצר" Width="120" DisplayMemberBinding="{Binding Product.ProductName}"/>
+                        <GridViewColumn Header="מחיר" Width="100" DisplayMemberBinding="{Binding Product.Price}"/>
+                        <GridViewColumn Header="כמות" Width="100" DisplayMemberBinding="{Binding Volume}"/>
+                        <GridViewColumn Header="סה''כ לתשלום" Width="200" DisplayMemberBinding="{Binding TotalPayment}"/>
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+
+        <Frame x:Name="frm" NavigationUIVisibility="Hidden"/>
+
+    </Grid>
+</Page>

@@ -1,0 +1,72 @@
+﻿<Application x:Class="Manager.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Manager"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <Style TargetType="TextBox" x:Key="Validation" BasedOn="{StaticResource {x:Type TextBox}}">
+                <Style.Triggers>
+                        <Trigger Property="Validation.HasError" Value="True">
+                            <Setter Property="Validation.ErrorTemplate">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <StackPanel>
+                                            <AdornedElementPlaceholder/>
+                                            <TextBlock Text="{Binding [0].ErrorContent}" HorizontalAlignment="Right" Foreground="Red"/>
+                                        </StackPanel>
+                                    </ControlTemplate>
+                                </Setter.Value>
+
+                            </Setter>
+                            <Setter Property="BorderBrush" Value="Red"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+
+
+
+            <ResourceDictionary.MergedDictionaries>
+                <!--<ResourceDictionary Source="pack://application:,,,/Paamonim.Resources;component/Themes/Generic.xaml"/>
+                <ResourceDictionary Source="Themes/Brushes.xaml"/>
+                <ResourceDictionary Source="/Themes;component/Buttons.xaml" />
+                <ResourceDictionary Source="Themes/DataGrid.xaml"/>
+                <ResourceDictionary Source="Themes/DataTemplates.xaml"/>
+                <ResourceDictionary Source="Themes/LineChart.xaml"/>
+                <ResourceDictionary Source="Themes/ScrollBars.xaml"/>
+                <ResourceDictionary Source="Themes/TabControl.xaml"/>
+                <ResourceDictionary Source="Themes/ProgressBar.xaml"/>
+                <ResourceDictionary Source="Themes/TextBoxs.xaml"/>
+                <ResourceDictionary Source="Themes/TextBlocks.xaml"/>
+                <ResourceDictionary Source="Themes/Image.xaml"/>
+                <ResourceDictionary Source="Themes/Global.xaml"/>
+                <ResourceDictionary Source="Themes/ComboBoxs.xaml"/>
+                <ResourceDictionary Source="Themes/PasswordBox.xaml"/>
+                <ResourceDictionary Source="Themes/Expander.xaml"/>
+                <ResourceDictionary Source="/Paamonim.Family.BudgetManagement;component/BudgetManagement.xaml" />-->
+                <ResourceDictionary Source="/Themes;component/Sivan.xaml" />
+
+
+
+
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+                
+                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />-->
+                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />-->
+                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Pink.xaml" />-->
+                
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="Cyan" SecondaryColor="Cyan" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+
+                
+                
+                <ResourceDictionary Source="/Themes;component/Buttons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

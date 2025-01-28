@@ -1,0 +1,74 @@
+﻿<Page x:Class="Manager.ProductsLits"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Manager" xmlns:controls="clr-namespace:Manager.Controls"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProductsLits"
+      Background="White">
+
+    <Grid FlowDirection="RightToLeft">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Style="{StaticResource AddButtonStyle}" x:Name="btnAdd" 
+                        Click="btnAdd_Click"/>
+                <Button Style="{StaticResource UpdateButtonStyle}" x:Name="btnUpdate" 
+                        Click="btnUpdate_Click" IsEnabled="False"/>
+                <Button Style="{StaticResource RemoveButtonStyle}" x:Name="btnDelete" 
+                        Click="btnDelete_Click" IsEnabled="False" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBlock Text="חיפוש :" Margin="10,20" FontSize="15" VerticalAlignment="Center"/>
+
+
+                <TextBox x:Name="txtSearchByProductName" Width="150" Margin="10" FontSize="15" Height="30"
+                        TextChanged="txtX_TextChanged"
+                        materialDesign:HintAssist.Hint="שם מוצר"/>
+
+                <TextBox x:Name="txtSearchByPrice" Width="150" Margin="10" FontSize="15" Height="30"
+                        TextChanged="txtX_TextChanged"
+                        materialDesign:HintAssist.Hint="מחיר"/>
+
+                <Button x:Name="btnClearFilter"
+                        Visibility="Collapsed"
+                        Style="{StaticResource ClearFilterButtonStyle}"
+                        Click="btnClearFilter_Click"/>
+            </StackPanel>
+
+            <ListView x:Name="dgProducts" 
+                      Grid.Row="1" FontSize="16" 
+                      ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                      MouseDoubleClick="dgProducts_DoubleClick" 
+                      SelectionChanged="dgProducts_SelectionChanged" >
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Margin" Value="30,0,0,0" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="קוד מוצר" DisplayMemberBinding="{Binding ProductID}"/>
+                        <GridViewColumn Header="שם מוצר" DisplayMemberBinding="{Binding ProductName}"/>
+                        <GridViewColumn Header="מחיר" DisplayMemberBinding="{Binding Price}"/>
+                        <GridViewColumn Header="תאור" DisplayMemberBinding="{Binding Description}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+
+        <Frame x:Name="frm" NavigationUIVisibility="Hidden"/>
+
+    </Grid>
+</Page>

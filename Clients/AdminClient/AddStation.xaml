@@ -1,0 +1,121 @@
+﻿<Page x:Class="Manager.AddStation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Manager"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1000"
+             Background="White">
+
+
+
+    <Border BorderBrush="Gray"
+            BorderThickness="1"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Background="WhiteSmoke">
+
+        <Grid FlowDirection="RightToLeft"
+              ShowGridLines="False" Width="650">
+
+            <Grid.RowDefinitions>
+                <!-- כותרת -->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="10"/>
+                <!-- פרטי המוצר -->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="10"/>
+                <!-- לחצנים -->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <!-- כותרת -->
+            <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock x:Name="txtHeader" Margin="20, 30" FontSize="40" Text="הוספת תחנת תדלוק חדשה :" />
+            </StackPanel>
+
+            <!-- פרטי המוצר -->
+            <Grid Grid.Row="2">
+                <Grid VerticalAlignment="Center"
+                  HorizontalAlignment="Center">
+
+                    <Grid.ColumnDefinitions>
+                        <!-- כותרת שדות -->
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.8*"/>
+                        <!-- שדות -->
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="0.8*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <!-- שם תחנה -->
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="5"/>
+                        <!-- כתובת -->
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="5"/>
+                        <!-- עיר -->
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="5"/>
+                        <!-- תגים -->
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="5"/>
+
+                    </Grid.RowDefinitions>
+
+
+                    <!-- שם תחנה -->
+                    <TextBlock Grid.Row="0" Margin="0,10,0,10" FontSize="15" Text="שם תחנה : " HorizontalAlignment="Center"/>
+                    <!-- כתובת -->
+                    <TextBlock Grid.Row="2" Margin="0,10,0,10" FontSize="15" Text="כתובת : " HorizontalAlignment="Center"/>
+                    <!-- עיר -->
+                    <TextBlock Grid.Row="4" Margin="0,10,0,10" FontSize="15" Text="עיר : " HorizontalAlignment="Center"/>
+                    <!--תגים-->
+                    <TextBlock Grid.Row="6" Margin="0,10,0,10" FontSize="15" Text="תגים : " HorizontalAlignment="Center"/>
+
+                    <!-- שם תחנה -->
+                    <TextBox Grid.Column="2" Grid.Row="0" 
+                         x:Name="txtStationName" Margin="50,10,50,10" FontSize="15" Width="200" Style="{StaticResource Validation}" Grid.ColumnSpan="2">
+                        <Binding Path="StationName">
+                            <Binding.ValidationRules>
+                                <local:IsHebrew/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox>
+
+                    <!-- כתובת -->
+                    <TextBox Grid.Column="2" Grid.Row="2" 
+                     x:Name="txtAddress" Margin="50,10,50,10" FontSize="15" Width="200" Text="{Binding Address}" Grid.ColumnSpan="2"/>
+
+                    <!-- עיר -->
+                    <ComboBox Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="4"  Name="cmbCities" Margin="50,0,50,0" FontSize="15"  Width="200"
+                              SelectedValue="{Binding CityID}" 
+                              SelectedValuePath="CityID"
+                              DisplayMemberPath="CityName"/>
+
+                    <!-- תגים -->
+                    <ListBox x:Name="lstbTags" Grid.Column="2" Grid.Row="6"  Margin="10,10,-110,10" FontSize="15" Width="400"
+                             SelectionMode="Multiple"
+                             SelectedValue="{Binding TagID}"
+                             SelectedValuePath="TagID"
+                             DisplayMemberPath="TagName" Style="{StaticResource MaterialDesignFilterChipPrimaryListBox}" Grid.ColumnSpan="2"/>
+                </Grid>
+            </Grid>
+
+            <!-- לחצנים -->
+            <Grid Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" >
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Right">
+                    <TextBlock x:Name="txtErorrMassage" Text="יש למלא את כל השדות" Foreground="red" FontSize="15" Margin="15"  VerticalAlignment="Center" Visibility="Collapsed"/>
+                    <Button Margin="15" FontSize="18" Click="btnSave_Click" LostFocus="btnSave_LostFocus"
+                            Style="{StaticResource SaveButtonStyle}"/>
+                    <Button Margin="15" FontSize="18" Click="btnCancel_Click"
+                            Style="{StaticResource CancelButtonStyle}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Page>

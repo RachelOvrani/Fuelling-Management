@@ -1,0 +1,129 @@
+﻿<Page x:Class="Manager.FuellingSimulator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Manager" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        d:DesignHeight="500" d:DesignWidth="1200"
+        Background="White">
+
+    <Grid FlowDirection="RightToLeft">
+
+        <Grid.RowDefinitions>
+            <!-- שליחת בקשה -->
+            <RowDefinition Height="3*"/>
+            <!-- תגובה -->
+            <RowDefinition Height="1*"/>
+            <!-- שליחת דוח -->
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+
+
+
+        <Border Background="WhiteSmoke" Margin="50,50,50,10" Grid.Row="0">
+            <Grid VerticalAlignment="Center" ShowGridLines="False">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+
+                <TextBlock Grid.Column="0" Grid.Row="0" Text="מספר רישוי :" Margin="8" FontSize="20" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="1" Text="תחנה :" Margin="8" FontSize="20" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="מוצר :" Margin="8" FontSize="20" HorizontalAlignment="Center"/>
+
+                <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
+                    <TextBox Name="txtPlateNumber" Text="{Binding PlateNumber}"
+                         Margin="8" FontSize="15" Width="150" MaxLength="9" HorizontalAlignment="Left" 
+                         TextChanged="txtPlateNumber_TextChanged" />
+
+                    <TextBlock x:Name="txtError" Text="רכב זה לא שייך לעובדי הצי." Margin="10"
+                           Foreground="Red" FontSize="12" Visibility="Hidden" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <ComboBox Grid.Column="1" Grid.Row="1" Name="cmbStations" Margin="8" FontSize="12"  Width="150"  HorizontalAlignment="Left"
+                materialDesign:HintAssist.Hint="תחנות"
+                                          SelectionChanged="cmbStations_SelectionChange"
+                                          Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                                          SelectedItem="{Binding GasStation}"
+                                          DisplayMemberPath="StationName"/>
+
+
+                <ComboBox Grid.Column="1" Grid.Row="2" Name="cmbProducts" Margin="8" FontSize="12"  Width="150" HorizontalAlignment="Left"
+                materialDesign:HintAssist.Hint="מוצרים"
+                                          SelectionChanged="cmbProducts_SelectionChange"
+                                          Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                                          SelectedItem="{Binding ChosenProduct}"
+                                          DisplayMemberPath="ProductName"/>
+
+
+                <StackPanel Grid.Column="2" Grid.Row="0" Grid.RowSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <Button x:Name="btnRequest" Content="שליחת בקשה" FontSize="20" Width="155" Height="50" IsEnabled="False"
+                            Click="btnRequest_Click"
+                            Style="{StaticResource MaterialDesignFlatDarkButton}"/>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <StackPanel Orientation="Horizontal" Margin="50,10" Grid.Row="1">
+            <TextBlock FontSize="20" Text="תוצאה :" Margin="15" Foreground="{DynamicResource PrimaryHueDarkBrush}" FontWeight="ExtraBold" VerticalAlignment="Center"/>
+            <TextBlock x:Name="txtResult" Text="" FontSize="15" VerticalAlignment="Center" Foreground="LightCoral"/>
+            <Button x:Name="btnNewRequest" Width="110" Height="23" Visibility="Hidden" Margin="10"
+                    Click="btnNewRequest_Click"
+                    Style="{StaticResource MaterialDesignPaperButton}">
+                <Button.Content >
+                    <TextBlock Text="בקשה חדשה" VerticalAlignment="Center"/>
+                </Button.Content>
+            </Button>
+
+        </StackPanel>
+
+
+        <Border Background="WhiteSmoke" Grid.Row="2"  Margin="50,10,50,50">
+            <Grid VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="0" Grid.Row="1" Text="רכב :" Margin="8" FontSize="20" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="0" Text="תחנה :" Margin="8" FontSize="20" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="מוצר :" Margin="8" FontSize="20" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="3" Text="כמות:" Margin="8" FontSize="20" HorizontalAlignment="Center"/>
+
+                <TextBox Grid.Column="1" Grid.Row="0" x:Name="txtCar" Margin="8" FontSize="15" Width="150" HorizontalAlignment="Left" IsReadOnly="True"/>
+                <TextBox Grid.Column="1" Grid.Row="1" x:Name="txtStation" Margin="8" FontSize="15" Width="150" HorizontalAlignment="Left" IsReadOnly="True"/>
+                <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtProduct" Margin="8" FontSize="15" Width="150" HorizontalAlignment="Left" IsReadOnly="True"/>
+                <TextBox Grid.Column="1" Grid.Row="3" x:Name="txtAmount" Margin="8" FontSize="15" Width="150" 
+                         KeyUp="txtAmount_KeyUp" IsEnabled="False"
+                         HorizontalAlignment="Left" materialDesign:HintAssist.HelperText="0/0"/>
+
+
+                <StackPanel Grid.Column="2" Grid.Row="0" Grid.RowSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <Button x:Name="btnReport" Content="דווח" FontSize="20" Width="150" Height="50" IsEnabled="False" 
+                            Click="btnReport_Click"
+                            Style="{StaticResource MaterialDesignFlatDarkButton}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="FuelingManagmentService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/FuelingManagmentService/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/FuelingManagmentService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/FuelingManagmentService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Model" />
+      <xsd:import schemaLocation="http://localhost:8733/FuelingManagmentService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFuelingManagmentService_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetUserByLoginName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByLoginName" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetUserByLoginName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByLoginNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetStations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStations" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetStations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetStationsAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationsAmount" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetStationsAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationsAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetTags_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTags" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetTags_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetCities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCities" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetCities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_AddStation_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddStation" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_AddStation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_AddStationsTags_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddStationsTags" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_AddStationsTags_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddStationsTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_UpdateStation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStation" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_UpdateStation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_UpdateStationsTags_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStationsTags" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_UpdateStationsTags_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStationsTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_DeleteStation_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStation" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_DeleteStation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetFleets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFleets" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetFleets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFleetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetFleetsAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFleetsAmount" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetFleetsAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFleetsAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_AddFleet_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFleet" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_AddFleet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_AddUsersToFleet_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUsersToFleet" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_AddUsersToFleet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUsersToFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_UpdateFleet_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFleet" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_UpdateFleet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_DeleteFleet_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFleet" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_DeleteFleet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetProductsAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsAmount" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetProductsAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_AddProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProduct" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_AddProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_UpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_UpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_DeleteProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduct" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_DeleteProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetFleetRules_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFleetRules" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetFleetRules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFleetRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetRuleByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuleByID" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetRuleByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuleByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetFleetRulesAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFleetRulesAmount" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetFleetRulesAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFleetRulesAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_AddRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRule" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_AddRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_UpdateRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRule" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_UpdateRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_DeleteRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRule" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_DeleteRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetFleetCars_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFleetCars" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetFleetCars_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFleetCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetFleetCarsAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFleetCarsAmount" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetFleetCarsAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFleetCarsAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_AddWorkerCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddWorkerCar" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_AddWorkerCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddWorkerCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_UpdateWorkerCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWorkerCar" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_UpdateWorkerCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWorkerCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_DeleteWorkerCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWorkerCar" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_DeleteWorkerCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWorkerCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetTransactions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactions" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetTransactions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetTransactionsByCarID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionsByCarID" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetTransactionsByCarID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionsByCarIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetRejectedRequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRejectedRequests" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingManagmentService_GetRejectedRequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRejectedRequestsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFuelingManagmentService">
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetUsers" message="tns:IFuelingManagmentService_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetUsersResponse" message="tns:IFuelingManagmentService_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByLoginName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetUserByLoginName" message="tns:IFuelingManagmentService_GetUserByLoginName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetUserByLoginNameResponse" message="tns:IFuelingManagmentService_GetUserByLoginName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/AddUser" message="tns:IFuelingManagmentService_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/AddUserResponse" message="tns:IFuelingManagmentService_AddUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/UpdateUser" message="tns:IFuelingManagmentService_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/UpdateUserResponse" message="tns:IFuelingManagmentService_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/DeleteUser" message="tns:IFuelingManagmentService_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/DeleteUserResponse" message="tns:IFuelingManagmentService_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetStations" message="tns:IFuelingManagmentService_GetStations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetStationsResponse" message="tns:IFuelingManagmentService_GetStations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStationsAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetStationsAmount" message="tns:IFuelingManagmentService_GetStationsAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetStationsAmountResponse" message="tns:IFuelingManagmentService_GetStationsAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTags">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetTags" message="tns:IFuelingManagmentService_GetTags_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetTagsResponse" message="tns:IFuelingManagmentService_GetTags_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetCities" message="tns:IFuelingManagmentService_GetCities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetCitiesResponse" message="tns:IFuelingManagmentService_GetCities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddStation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/AddStation" message="tns:IFuelingManagmentService_AddStation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/AddStationResponse" message="tns:IFuelingManagmentService_AddStation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddStationsTags">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/AddStationsTags" message="tns:IFuelingManagmentService_AddStationsTags_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/AddStationsTagsResponse" message="tns:IFuelingManagmentService_AddStationsTags_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/UpdateStation" message="tns:IFuelingManagmentService_UpdateStation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/UpdateStationResponse" message="tns:IFuelingManagmentService_UpdateStation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStationsTags">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/UpdateStationsTags" message="tns:IFuelingManagmentService_UpdateStationsTags_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/UpdateStationsTagsResponse" message="tns:IFuelingManagmentService_UpdateStationsTags_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/DeleteStation" message="tns:IFuelingManagmentService_DeleteStation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/DeleteStationResponse" message="tns:IFuelingManagmentService_DeleteStation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleets">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetFleets" message="tns:IFuelingManagmentService_GetFleets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetFleetsResponse" message="tns:IFuelingManagmentService_GetFleets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetsAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetFleetsAmount" message="tns:IFuelingManagmentService_GetFleetsAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetFleetsAmountResponse" message="tns:IFuelingManagmentService_GetFleetsAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFleet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/AddFleet" message="tns:IFuelingManagmentService_AddFleet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/AddFleetResponse" message="tns:IFuelingManagmentService_AddFleet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUsersToFleet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/AddUsersToFleet" message="tns:IFuelingManagmentService_AddUsersToFleet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/AddUsersToFleetResponse" message="tns:IFuelingManagmentService_AddUsersToFleet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFleet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/UpdateFleet" message="tns:IFuelingManagmentService_UpdateFleet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/UpdateFleetResponse" message="tns:IFuelingManagmentService_UpdateFleet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFleet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/DeleteFleet" message="tns:IFuelingManagmentService_DeleteFleet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/DeleteFleetResponse" message="tns:IFuelingManagmentService_DeleteFleet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetProductsAmount" message="tns:IFuelingManagmentService_GetProductsAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetProductsAmountResponse" message="tns:IFuelingManagmentService_GetProductsAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetProducts" message="tns:IFuelingManagmentService_GetProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetProductsResponse" message="tns:IFuelingManagmentService_GetProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/AddProduct" message="tns:IFuelingManagmentService_AddProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/AddProductResponse" message="tns:IFuelingManagmentService_AddProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/UpdateProduct" message="tns:IFuelingManagmentService_UpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/UpdateProductResponse" message="tns:IFuelingManagmentService_UpdateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/DeleteProduct" message="tns:IFuelingManagmentService_DeleteProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/DeleteProductResponse" message="tns:IFuelingManagmentService_DeleteProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetRules">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetFleetRules" message="tns:IFuelingManagmentService_GetFleetRules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetFleetRulesResponse" message="tns:IFuelingManagmentService_GetFleetRules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetRuleByID" message="tns:IFuelingManagmentService_GetRuleByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetRuleByIDResponse" message="tns:IFuelingManagmentService_GetRuleByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetRulesAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetFleetRulesAmount" message="tns:IFuelingManagmentService_GetFleetRulesAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetFleetRulesAmountResponse" message="tns:IFuelingManagmentService_GetFleetRulesAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/AddRule" message="tns:IFuelingManagmentService_AddRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/AddRuleResponse" message="tns:IFuelingManagmentService_AddRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/UpdateRule" message="tns:IFuelingManagmentService_UpdateRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/UpdateRuleResponse" message="tns:IFuelingManagmentService_UpdateRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/DeleteRule" message="tns:IFuelingManagmentService_DeleteRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/DeleteRuleResponse" message="tns:IFuelingManagmentService_DeleteRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetCars">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetFleetCars" message="tns:IFuelingManagmentService_GetFleetCars_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetFleetCarsResponse" message="tns:IFuelingManagmentService_GetFleetCars_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetCarsAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetFleetCarsAmount" message="tns:IFuelingManagmentService_GetFleetCarsAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetFleetCarsAmountResponse" message="tns:IFuelingManagmentService_GetFleetCarsAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddWorkerCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/AddWorkerCar" message="tns:IFuelingManagmentService_AddWorkerCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/AddWorkerCarResponse" message="tns:IFuelingManagmentService_AddWorkerCar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkerCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/UpdateWorkerCar" message="tns:IFuelingManagmentService_UpdateWorkerCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/UpdateWorkerCarResponse" message="tns:IFuelingManagmentService_UpdateWorkerCar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWorkerCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/DeleteWorkerCar" message="tns:IFuelingManagmentService_DeleteWorkerCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/DeleteWorkerCarResponse" message="tns:IFuelingManagmentService_DeleteWorkerCar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetTransactions" message="tns:IFuelingManagmentService_GetTransactions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetTransactionsResponse" message="tns:IFuelingManagmentService_GetTransactions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsByCarID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetTransactionsByCarID" message="tns:IFuelingManagmentService_GetTransactionsByCarID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetTransactionsByCarIDResponse" message="tns:IFuelingManagmentService_GetTransactionsByCarID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRejectedRequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetRejectedRequests" message="tns:IFuelingManagmentService_GetRejectedRequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingManagmentService/GetRejectedRequestsResponse" message="tns:IFuelingManagmentService_GetRejectedRequests_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFuelingManagmentService" type="tns:IFuelingManagmentService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByLoginName">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetUserByLoginName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStations">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetStations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStationsAmount">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetStationsAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTags">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetTags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddStation">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/AddStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddStationsTags">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/AddStationsTags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStation">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/UpdateStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStationsTags">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/UpdateStationsTags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStation">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/DeleteStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleets">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetFleets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetsAmount">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetFleetsAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFleet">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/AddFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUsersToFleet">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/AddUsersToFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFleet">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/UpdateFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFleet">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/DeleteFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsAmount">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetProductsAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/DeleteProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetRules">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetFleetRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleByID">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetRuleByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetRulesAmount">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetFleetRulesAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRule">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/AddRule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRule">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/UpdateRule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRule">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/DeleteRule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetCars">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetFleetCars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetCarsAmount">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetFleetCarsAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddWorkerCar">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/AddWorkerCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkerCar">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/UpdateWorkerCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWorkerCar">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/DeleteWorkerCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactions">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsByCarID">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetTransactionsByCarID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRejectedRequests">
+      <soap:operation soapAction="http://tempuri.org/IFuelingManagmentService/GetRejectedRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FuelingManagmentService">
+    <wsdl:port name="BasicHttpBinding_IFuelingManagmentService" binding="tns:BasicHttpBinding_IFuelingManagmentService">
+      <soap:address location="http://localhost:8733/FuelingManagmentService/FuelingManagmentService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="6e1eec5f-83a0-4be7-a44f-36b245a89c43" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/FuelingAuthorizationService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="b9dec12e-3415-48bf-8f5b-5a83768fbd34" SourceId="1" SourceUrl="http://localhost:8733/FuelingAuthorizationService/?xsd=xsd1" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="10a35aba-ba85-4d93-9753-bd3e55bc2181" SourceId="1" SourceUrl="http://localhost:8733/FuelingAuthorizationService/?xsd=xsd0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="65b5d79d-6198-4664-8677-92e99d52eb31" SourceId="1" SourceUrl="http://localhost:8733/FuelingAuthorizationService/?disco" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="3d8661be-7096-4041-9ac1-010a8387ed38" SourceId="1" SourceUrl="http://localhost:8733/FuelingAuthorizationService/?xsd=xsd2" />
+    <MetadataFile FileName="FuelingAuthorizationService.wsdl" MetadataType="Wsdl" ID="55579da9-9e5e-4002-8074-27475e4e05a9" SourceId="1" SourceUrl="http://localhost:8733/FuelingAuthorizationService/?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,104 @@
+﻿<Page x:Class="Manager.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:ribbonPre="clr-namespace:System.Windows.Controls.Ribbon.Primitives;assembly=System.Windows.Controls.Ribbon"
+      xmlns:local="clr-namespace:Manager" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HomePage"
+      Background="white"
+      FlowDirection="RightToLeft">
+
+    <Page.Resources>
+
+        <Style x:Key="MenuStyle" TargetType="Button">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="20, 15"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+
+        <Style TargetType="{x:Type ribbonPre:RibbonTitlePanel}">
+            <Setter Property="Visibility" Value="Visible"/>
+        </Style>
+
+    </Page.Resources>
+
+    <Grid>
+        <DockPanel Background="#dddd" FlowDirection="RightToLeft">
+
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Margin="2,5" FlowDirection="RightToLeft" HorizontalAlignment="Left">
+                <TextBlock x:Name="txtAmount" FontSize="15" Margin="10, 0"/>
+            </StackPanel>
+
+            <Grid DockPanel.Dock ="Top" HorizontalAlignment="Right">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel  Orientation="Horizontal" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
+                    <TextBlock x:Name="txtProfilName"  Margin="10,10,5,-15" FontSize="20" Text="{Binding FirstName, FallbackValue='רחל'}" VerticalAlignment="Center"/>
+                    <TextBlock Margin="5,10,10,-15" FontSize="20" Text="{Binding LastName, FallbackValue='עוברני'}" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <Button Grid.Column="1" Grid.Row="0"
+                    Style="{StaticResource SettingsButtonStyle}" 
+                            x:Name="btnSetting" 
+                            HorizontalAlignment="Center"
+                            Margin="20,10,20,-30"
+                            Click="btnSetting_Click"/>
+
+                <Button Grid.Column="0" Grid.Row="1"
+                    Name="btnLogout" Content="התנתק" FontSize="15" Width="80" Margin="25, 15,10,-25" 
+                        Click="btnLogout_Click" HorizontalAlignment="Center"
+                        Style="{StaticResource MaterialDesignFlatDarkButton}"/>
+
+            </Grid>
+
+
+            <TabControl x:Name="tabControl" Margin="10" 
+                        SelectionChanged="TabControl_SelectedChange" 
+                        HorizontalContentAlignment="Left"
+                        materialDesign:ColorZoneAssist.Mode="PrimaryDark">
+
+
+                <TabItem Width="250" Background="{DynamicResource PrimaryHueMidBrush }">
+                    <TabItem.Header>
+                        <TextBlock Text="תחנות" FontSize="17"/>
+                    </TabItem.Header>
+                    
+                    <Frame x:Name="frmStations" NavigationUIVisibility="Hidden"/>
+                </TabItem>
+
+                <TabItem Width="250" Background="{DynamicResource PrimaryHueMidBrush }">
+                    <TabItem.Header>
+                        <TextBlock Text="מוצרים" FontSize="17"/>
+                    </TabItem.Header>
+                    
+                    <Frame x:Name="frmProducts" NavigationUIVisibility="Hidden"/>
+                </TabItem>
+
+                <TabItem Width="250" Background="{DynamicResource PrimaryHueMidBrush }">
+                    <TabItem.Header>
+                        <TextBlock Text="ציים" FontSize="17"/>
+                    </TabItem.Header>
+
+                    <Frame x:Name="frmFleets" NavigationUIVisibility="Hidden"/>
+                </TabItem>
+                
+            </TabControl>
+
+        </DockPanel>
+
+        <Frame x:Name="frmLogout" NavigationUIVisibility ="Hidden"/>
+        <Frame x:Name="frmSetting"/>
+    </Grid>
+</Page>

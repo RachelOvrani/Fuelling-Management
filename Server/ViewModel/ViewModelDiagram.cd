@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ViewModel.BaseDB">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAIAgCAAABAAAgAAUAAAIAQAMAQACQAAA=</HashCode>
+      <FileName>BaseDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewModel.CarsDB">
+    <Position X="6.25" Y="0.75" Width="1.5" />
+    <InheritanceLine Type="ViewModel.BaseDB" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.25" Y="0.5" />
+        <Point X="1.25" Y="0.252" />
+        <Point X="7.125" Y="0.252" />
+        <Point X="7.125" Y="0.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAACAAAAAAIAAAEAAAAAAAA=</HashCode>
+      <FileName>CarsDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewModel.CitiesDB">
+    <Position X="11.5" Y="0.75" Width="1.5" />
+    <InheritanceLine Type="ViewModel.BaseDB" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.25" Y="0.5" />
+        <Point X="1.25" Y="0.252" />
+        <Point X="12.25" Y="0.252" />
+        <Point X="12.25" Y="0.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAIAEAEAAAAAAAA=</HashCode>
+      <FileName>CitiesDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewModel.FleetsDB">
+    <Position X="4.5" Y="0.75" Width="1.5" />
+    <InheritanceLine Type="ViewModel.BaseDB" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.25" Y="0.5" />
+        <Point X="1.25" Y="0.252" />
+        <Point X="5.25" Y="0.252" />
+        <Point X="5.25" Y="0.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAACAAAAAAAAAAAAAAIAAAEAAAAAAAA=</HashCode>
+      <FileName>FleetsDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewModel.GlobalDB">
+    <Position X="14.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAgCQAAAAAAAAAAgAAABQAAAAKAAAAAIEAIAAAAAAAA=</HashCode>
+      <FileName>GlobalDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewModel.ProductsDB">
+    <Position X="13.25" Y="0.75" Width="1.5" />
+    <InheritanceLine Type="ViewModel.BaseDB" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.25" Y="0.5" />
+        <Point X="1.25" Y="0.252" />
+        <Point X="14" Y="0.252" />
+        <Point X="14" Y="0.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAIAQAEAAAAAAAA=</HashCode>
+      <FileName>ProductsDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewModel.ProductsLimitDB">
+    <Position X="6.25" Y="3.25" Width="1.5" />
+    <InheritanceLine Type="ViewModel.BaseDB" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.188" Y="5.199" />
+        <Point X="1.188" Y="5.574" />
+        <Point X="7" Y="5.574" />
+        <Point X="7" Y="5.06" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAACAAAAAAAAAAAAAAIAAAEAAAAAAAA=</HashCode>
+      <FileName>ProductsLimitDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewModel.RejectedRequestsDB">
+    <Position X="9.75" Y="3.25" Width="1.5" />
+    <InheritanceLine Type="ViewModel.BaseDB" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.188" Y="5.199" />
+        <Point X="1.188" Y="5.574" />
+        <Point X="10.5" Y="5.574" />
+        <Point X="10.5" Y="5.06" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAIAAAEAIAAAAAA=</HashCode>
+      <FileName>RejectedRequestsDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewModel.SQLBuilder">
+    <Position X="12.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAEAAAAAAEAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SQLBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewModel.StationsDB">
+    <Position X="8" Y="0.75" Width="1.5" />
+    <InheritanceLine Type="ViewModel.BaseDB" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.25" Y="0.5" />
+        <Point X="1.25" Y="0.252" />
+        <Point X="8.812" Y="0.252" />
+        <Point X="8.812" Y="0.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAACAAAAAAAAAAAAAAIAAAEAAAAAAAA=</HashCode>
+      <FileName>StationsDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewModel.StationsTagsDB">
+    <Position X="11.5" Y="3.25" Width="1.5" />
+    <InheritanceLine Type="ViewModel.BaseDB" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.188" Y="5.199" />
+        <Point X="1.188" Y="5.574" />
+        <Point X="12.188" Y="5.574" />
+        <Point X="12.188" Y="5.252" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAgIAAAEAAAAAAAA=</HashCode>
+      <FileName>StationsTagsDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewModel.TagsDB">
+    <Position X="9.75" Y="0.75" Width="1.5" />
+    <InheritanceLine Type="ViewModel.BaseDB" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.25" Y="0.5" />
+        <Point X="1.25" Y="0.252" />
+        <Point X="10.5" Y="0.252" />
+        <Point X="10.5" Y="0.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAACAAAAAAAAAAAAAAIAAAEAAAAAAAA=</HashCode>
+      <FileName>TagsDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewModel.TransactionsDB">
+    <Position X="8" Y="3.25" Width="1.5" />
+    <InheritanceLine Type="ViewModel.BaseDB" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.188" Y="5.199" />
+        <Point X="1.188" Y="5.574" />
+        <Point X="8.688" Y="5.574" />
+        <Point X="8.688" Y="5.06" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAgAAAIAAAEAAAAAAAA=</HashCode>
+      <FileName>TransactionsDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewModel.UsersDB">
+    <Position X="2.75" Y="0.75" Width="1.5" />
+    <InheritanceLine Type="ViewModel.BaseDB" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.25" Y="0.5" />
+        <Point X="1.25" Y="0.252" />
+        <Point X="3.5" Y="0.252" />
+        <Point X="3.5" Y="0.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAACAAAAAAAAAAAAAAIAAAEAAAAAAAA=</HashCode>
+      <FileName>UsersDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewModel.RulesTagsDB">
+    <Position X="4.5" Y="3.25" Width="1.5" />
+    <InheritanceLine Type="ViewModel.BaseDB" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.188" Y="5.199" />
+        <Point X="1.188" Y="5.574" />
+        <Point X="5.188" Y="5.574" />
+        <Point X="5.188" Y="4.867" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAIAAAEAAAAAAAA=</HashCode>
+      <FileName>RulesTagsDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewModel.RulesDB">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <InheritanceLine Type="ViewModel.BaseDB" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.188" Y="5.199" />
+        <Point X="1.188" Y="5.574" />
+        <Point X="3.438" Y="5.574" />
+        <Point X="3.438" Y="4.867" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAIAAAEAAAAAAAA=</HashCode>
+      <FileName>RulesDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

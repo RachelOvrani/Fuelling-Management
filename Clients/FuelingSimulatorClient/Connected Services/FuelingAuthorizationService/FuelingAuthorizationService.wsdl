@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="FuelingAuthorizationService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/FuelingAuthorizationService/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/FuelingAuthorizationService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/FuelingAuthorizationService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFuelingAuthorizationService_FuellingRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:FuellingRequest" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingAuthorizationService_FuellingRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FuellingRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingAuthorizationService_FuellingReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:FuellingReport" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingAuthorizationService_FuellingReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FuellingReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingAuthorizationService_CheckExistingCarByPlateNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckExistingCarByPlateNumber" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingAuthorizationService_CheckExistingCarByPlateNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckExistingCarByPlateNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingAuthorizationService_GetStations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStations" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingAuthorizationService_GetStations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingAuthorizationService_GetStationsAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationsAmount" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingAuthorizationService_GetStationsAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationsAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingAuthorizationService_GetProductsAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsAmount" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingAuthorizationService_GetProductsAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingAuthorizationService_GetProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="IFuelingAuthorizationService_GetProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFuelingAuthorizationService">
+    <wsdl:operation name="FuellingRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingAuthorizationService/FuellingRequest" message="tns:IFuelingAuthorizationService_FuellingRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingAuthorizationService/FuellingRequestResponse" message="tns:IFuelingAuthorizationService_FuellingRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FuellingReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingAuthorizationService/FuellingReport" message="tns:IFuelingAuthorizationService_FuellingReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingAuthorizationService/FuellingReportResponse" message="tns:IFuelingAuthorizationService_FuellingReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckExistingCarByPlateNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingAuthorizationService/CheckExistingCarByPlateNumber" message="tns:IFuelingAuthorizationService_CheckExistingCarByPlateNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingAuthorizationService/CheckExistingCarByPlateNumberResponse" message="tns:IFuelingAuthorizationService_CheckExistingCarByPlateNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingAuthorizationService/GetStations" message="tns:IFuelingAuthorizationService_GetStations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingAuthorizationService/GetStationsResponse" message="tns:IFuelingAuthorizationService_GetStations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStationsAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingAuthorizationService/GetStationsAmount" message="tns:IFuelingAuthorizationService_GetStationsAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingAuthorizationService/GetStationsAmountResponse" message="tns:IFuelingAuthorizationService_GetStationsAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingAuthorizationService/GetProductsAmount" message="tns:IFuelingAuthorizationService_GetProductsAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingAuthorizationService/GetProductsAmountResponse" message="tns:IFuelingAuthorizationService_GetProductsAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFuelingAuthorizationService/GetProducts" message="tns:IFuelingAuthorizationService_GetProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFuelingAuthorizationService/GetProductsResponse" message="tns:IFuelingAuthorizationService_GetProducts_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFuelingAuthorizationService" type="tns:IFuelingAuthorizationService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FuellingRequest">
+      <soap:operation soapAction="http://tempuri.org/IFuelingAuthorizationService/FuellingRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FuellingReport">
+      <soap:operation soapAction="http://tempuri.org/IFuelingAuthorizationService/FuellingReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckExistingCarByPlateNumber">
+      <soap:operation soapAction="http://tempuri.org/IFuelingAuthorizationService/CheckExistingCarByPlateNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStations">
+      <soap:operation soapAction="http://tempuri.org/IFuelingAuthorizationService/GetStations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStationsAmount">
+      <soap:operation soapAction="http://tempuri.org/IFuelingAuthorizationService/GetStationsAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsAmount">
+      <soap:operation soapAction="http://tempuri.org/IFuelingAuthorizationService/GetProductsAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <soap:operation soapAction="http://tempuri.org/IFuelingAuthorizationService/GetProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FuelingAuthorizationService">
+    <wsdl:port name="BasicHttpBinding_IFuelingAuthorizationService" binding="tns:BasicHttpBinding_IFuelingAuthorizationService">
+      <soap:address location="http://localhost:8733/FuelingAuthorizationService/FuelingAuthorizationService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

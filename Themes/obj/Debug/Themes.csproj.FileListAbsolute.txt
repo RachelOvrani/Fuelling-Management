@@ -1,0 +1,57 @@
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\bin\Debug\Themes.dll
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\bin\Debug\Themes.pdb
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\bin\Debug\MaterialDesignColors.dll
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\bin\Debug\Microsoft.Xaml.Behaviors.dll
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\bin\Debug\MaterialDesignColors.pdb
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\bin\Debug\Microsoft.Xaml.Behaviors.xml
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\obj\Debug\Themes.csproj.AssemblyReference.cache
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\obj\Debug\Buttons.baml
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\obj\Debug\Sivan.baml
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\obj\Debug\Themes_MarkupCompile.cache
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\obj\Debug\Themes.g.resources
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\obj\Debug\Themes.csproj.CoreCompileInputs.cache
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\obj\Debug\Themes.csproj.CopyComplete
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\obj\Debug\Themes.dll
+E:\גיבוי 2023-04-30\הפרויקט\FuelingManager\Themes\obj\Debug\Themes.pdb
+E:\הפרויקט\FuelingManager\Themes\bin\Debug\Themes.dll
+E:\הפרויקט\FuelingManager\Themes\bin\Debug\Themes.pdb
+E:\הפרויקט\FuelingManager\Themes\bin\Debug\MaterialDesignColors.dll
+E:\הפרויקט\FuelingManager\Themes\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\הפרויקט\FuelingManager\Themes\bin\Debug\Microsoft.Xaml.Behaviors.dll
+E:\הפרויקט\FuelingManager\Themes\bin\Debug\MaterialDesignColors.pdb
+E:\הפרויקט\FuelingManager\Themes\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\הפרויקט\FuelingManager\Themes\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\הפרויקט\FuelingManager\Themes\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+E:\הפרויקט\FuelingManager\Themes\bin\Debug\Microsoft.Xaml.Behaviors.xml
+E:\הפרויקט\FuelingManager\Themes\obj\Debug\Themes.csproj.AssemblyReference.cache
+E:\הפרויקט\FuelingManager\Themes\obj\Debug\Buttons.baml
+E:\הפרויקט\FuelingManager\Themes\obj\Debug\Sivan.baml
+E:\הפרויקט\FuelingManager\Themes\obj\Debug\Themes_MarkupCompile.cache
+E:\הפרויקט\FuelingManager\Themes\obj\Debug\Themes.g.resources
+E:\הפרויקט\FuelingManager\Themes\obj\Debug\Themes.csproj.CoreCompileInputs.cache
+E:\הפרויקט\FuelingManager\Themes\obj\Debug\Themes.csproj.CopyComplete
+E:\הפרויקט\FuelingManager\Themes\obj\Debug\Themes.dll
+E:\הפרויקט\FuelingManager\Themes\obj\Debug\Themes.pdb
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\bin\Debug\Themes.dll
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\bin\Debug\Themes.pdb
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\bin\Debug\MaterialDesignColors.dll
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\bin\Debug\Microsoft.Xaml.Behaviors.dll
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\bin\Debug\MaterialDesignColors.pdb
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\bin\Debug\Microsoft.Xaml.Behaviors.xml
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\obj\Debug\Themes.csproj.AssemblyReference.cache
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\obj\Debug\Buttons.baml
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\obj\Debug\Sivan.baml
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\obj\Debug\Themes_MarkupCompile.cache
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\obj\Debug\Themes.g.resources
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\obj\Debug\Themes.csproj.CoreCompileInputs.cache
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\obj\Debug\Themes.csproj.CopyComplete
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\obj\Debug\Themes.dll
+E:\גיבוי 2023-04-30\2023-06-27\FuelingManager\Themes\obj\Debug\Themes.pdb

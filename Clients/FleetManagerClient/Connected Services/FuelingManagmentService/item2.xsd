@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8733/FuelingManagmentService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="User">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FleetID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LoginName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LoginPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Picture" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="PicturePath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Role" type="xs:int" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="WorkspaceColor" type="q1:Color" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="BaseEntity">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="BaseEntity" nillable="true" type="tns:BaseEntity" />
+  <xs:complexType name="ArrayOfStation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Station" nillable="true" type="tns:Station" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStation" nillable="true" type="tns:ArrayOfStation" />
+  <xs:complexType name="Station">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="tns:City" />
+          <xs:element minOccurs="0" name="CityID" type="xs:int" />
+          <xs:element minOccurs="0" name="StationID" type="xs:int" />
+          <xs:element minOccurs="0" name="StationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tags" nillable="true" type="tns:ArrayOfTag" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Station" nillable="true" type="tns:Station" />
+  <xs:complexType name="City">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CityID" type="xs:int" />
+          <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="City" nillable="true" type="tns:City" />
+  <xs:complexType name="ArrayOfTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tag" nillable="true" type="tns:Tag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTag" nillable="true" type="tns:ArrayOfTag" />
+  <xs:complexType name="Tag">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TagID" type="xs:int" />
+          <xs:element minOccurs="0" name="TagName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Tag" nillable="true" type="tns:Tag" />
+  <xs:complexType name="ArrayOfCity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="City" nillable="true" type="tns:City" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCity" nillable="true" type="tns:ArrayOfCity" />
+  <xs:complexType name="ArrayOfFleet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Fleet" nillable="true" type="tns:Fleet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFleet" nillable="true" type="tns:ArrayOfFleet" />
+  <xs:complexType name="Fleet">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Amount" type="xs:double" />
+          <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Credit" type="xs:double" />
+          <xs:element minOccurs="0" name="Discount" type="xs:double" />
+          <xs:element minOccurs="0" name="FleetID" type="xs:int" />
+          <xs:element minOccurs="0" name="Logo" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="LogoPath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Users" nillable="true" type="tns:ArrayOfUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Fleet" nillable="true" type="tns:Fleet" />
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+  <xs:complexType name="Product">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="ArrayOfRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Rule" nillable="true" type="tns:Rule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRule" nillable="true" type="tns:ArrayOfRule" />
+  <xs:complexType name="Rule">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FleetID" type="xs:int" />
+          <xs:element minOccurs="0" name="LimitedProducts" nillable="true" type="tns:ArrayOfProductLimit" />
+          <xs:element minOccurs="0" name="RuleID" type="xs:int" />
+          <xs:element minOccurs="0" name="RuleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tags" nillable="true" type="tns:ArrayOfTag" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Rule" nillable="true" type="tns:Rule" />
+  <xs:complexType name="ArrayOfProductLimit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductLimit" nillable="true" type="tns:ProductLimit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductLimit" nillable="true" type="tns:ArrayOfProductLimit" />
+  <xs:complexType name="ProductLimit">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DailyVolume" type="xs:double" />
+          <xs:element minOccurs="0" name="LimitID" type="xs:int" />
+          <xs:element minOccurs="0" name="MonthlyVolume" type="xs:double" />
+          <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductLimit" nillable="true" type="tns:ProductLimit" />
+  <xs:complexType name="ArrayOfCar">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Car" nillable="true" type="tns:Car" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCar" nillable="true" type="tns:ArrayOfCar" />
+  <xs:complexType name="Car">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CarID" type="xs:int" />
+          <xs:element minOccurs="0" name="Fleet" nillable="true" type="tns:Fleet" />
+          <xs:element minOccurs="0" name="FleetID" type="xs:int" />
+          <xs:element minOccurs="0" name="Menufactor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OwnerID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OwnerPhoneNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PlateNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rule" nillable="true" type="tns:Rule" />
+          <xs:element minOccurs="0" name="RuleID" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Car" nillable="true" type="tns:Car" />
+  <xs:complexType name="ArrayOfTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Transaction" nillable="true" type="tns:Transaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTransaction" nillable="true" type="tns:ArrayOfTransaction" />
+  <xs:complexType name="Transaction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Car" nillable="true" type="tns:Car" />
+          <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+          <xs:element minOccurs="0" name="Rule" nillable="true" type="tns:Rule" />
+          <xs:element minOccurs="0" name="Station" nillable="true" type="tns:Station" />
+          <xs:element minOccurs="0" name="TotalPayment" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TransactionDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+          <xs:element minOccurs="0" name="Volume" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Transaction" nillable="true" type="tns:Transaction" />
+  <xs:complexType name="ArrayOfRejectedRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RejectedRequest" nillable="true" type="tns:RejectedRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRejectedRequest" nillable="true" type="tns:ArrayOfRejectedRequest" />
+  <xs:complexType name="RejectedRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Car" nillable="true" type="tns:Car" />
+          <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RejectedRequestDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RejectedRequestID" type="xs:int" />
+          <xs:element minOccurs="0" name="Rule" nillable="true" type="tns:Rule" />
+          <xs:element minOccurs="0" name="Station" nillable="true" type="tns:Station" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RejectedRequest" nillable="true" type="tns:RejectedRequest" />
+</xs:schema>
